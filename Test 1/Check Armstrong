@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+        
+        Scanner s = new Scanner(System.in);
+        
+        int n = s.nextInt();
+        
+        int temp = n;
+        int digits = 0;
+       	while(n>0){
+        	digits++;
+            n=n/10;
+       	}
+        
+        n = temp;
+        int sum = 0;
+        
+        while(n>0){
+            
+            int rem = n%10;
+            sum = sum + (int)Math.pow(rem, digits);
+            n=n/10;
+        }
+		
+        
+        if(sum == temp){
+            System.out.print("true");
+        }else{
+            System.out.print("false");
+        }
+
+	}
+}
